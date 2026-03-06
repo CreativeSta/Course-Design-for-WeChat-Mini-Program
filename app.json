@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/community/community",
+    "pages/service/service",
+    "pages/product/product",
+    "pages/mine/mine",
+    "pages/medicalGuide/medicalGuide",
+    "pages/diseaseEducation/diseaseEducation",
+    "pages/login/login",
+    "pages/test/test",
+    "pages/healthForm/healthForm",
+    "pages/healthResult/healthResult",
+    "pages/cart/cart",
+    "pages/medicalKnowledge/medicalKnowledge",
+    "pages/chineseMedicine/chineseMedicine",
+    "pages/knowledgeDetail/knowledgeDetail",
+    "pages/medicineDetail/medicineDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "适老化健康管理",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#e60012",
+    "backgroundColor": "#ffffff",
+    "iconSize": 40,
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "运动",
+        "iconPath": "images/tabbar/index_normal.png",
+        "selectedIconPath": "images/tabbar/index_active.png"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "text": "社群",
+        "iconPath": "images/tabbar/community_normal.png",
+        "selectedIconPath": "images/tabbar/community_active.png"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "服务",
+        "iconPath": "images/tabbar/service_normal.png",
+        "selectedIconPath": "images/tabbar/service_active.png"
+      },
+      {
+        "pagePath": "pages/product/product",
+        "text": "商品",
+        "iconPath": "images/tabbar/product_normal.png",
+        "selectedIconPath": "images/tabbar/product_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/tabbar/mine_normal.png",
+        "selectedIconPath": "images/tabbar/mine_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

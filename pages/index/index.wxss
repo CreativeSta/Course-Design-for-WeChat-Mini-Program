@@ -1,0 +1,102 @@
+page {
+  background: #f4f6fa;
+}
+
+.sport-page {
+  padding: 24rpx;
+}
+
+.hero {
+  border-radius: 24rpx;
+  padding: 32rpx 26rpx;
+  background: linear-gradient(140deg, #ff8a00 0%, #ff5e62 100%);
+  box-shadow: 0 12rpx 30rpx rgba(255, 94, 98, 0.22);
+}
+
+.hero-title {
+  color: #ffffff;
+  font-size: 38rpx;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  margin-top: 8rpx;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 26rpx;
+}
+
+.summary-grid {
+  margin-top: 18rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14rpx;
+}
+
+.summary-card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(15, 23, 42, 0.06);
+}
+
+.summary-label {
+  color: #6b7280;
+  font-size: 24rpx;
+}
+
+.summary-value {
+  margin-top: 8rpx;
+  color: #111827;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.action-card,
+.tips-card {
+  margin-top: 18rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  box-shadow: 0 6rpx 16rpx rgba(15, 23, 42, 0.07);
+}
+
+.action-title,
+.tips-title {
+  color: #111827;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.action-desc,
+.tips-content {
+  margin-top: 10rpx;
+  color: #4b5563;
+  font-size: 26rpx;
+  line-height: 1.6;
+}
+
+.primary-btn {
+  margin-top: 20rpx;
+  border-radius: 44rpx;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 30rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+}
+
+.quick-row {
+  margin-top: 18rpx;
+  display: flex;
+  gap: 12rpx;
+}
+
+.ghost-btn {
+  flex: 1;
+  border-radius: 42rpx;
+  background: #e5e7eb;
+  color: #1f2937;
+  font-size: 28rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+}

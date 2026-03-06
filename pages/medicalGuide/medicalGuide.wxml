@@ -1,0 +1,53 @@
+<!--medicalGuide.wxml-->
+<view class="container">
+  <view class="section-title">就医流程</view>
+  
+  <view class="card">
+    <image src="/images/medical-guide.png" class="img-fluid" mode="aspectFit"></image>
+  </view>
+  
+  <!-- 就医步骤列表 -->
+  <view class="card">
+    <block wx:for="{{guideSteps}}" wx:key="id">
+      <view class="step-item">
+        <view class="step-number">{{item.id}}</view>
+        <view class="step-content">
+          <view class="step-title">{{item.title}}</view>
+          <view class="step-desc">{{item.desc}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 医院小贴士 -->
+  <view class="section-title">医院小贴士</view>
+  <view class="card">
+    <view class="tip-list">
+      <block wx:for="{{hospitalTips}}" wx:key="id">
+        <view class="tip-item">
+          <view class="tip-icon">✓</view>
+          <view class="tip-content">
+            <view class="tip-title">{{item.title}}</view>
+            <view class="tip-desc">{{item.desc}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  
+  <!-- 常见科室 -->
+  <view class="section-title">常见科室指南</view>
+  <view class="card">
+    <view class="department-list">
+      <block wx:for="{{commonDepartments}}" wx:key="id">
+        <view class="department-item">
+          <view class="department-name">{{item.name}}</view>
+          <view class="department-desc">{{item.desc}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  
+  <!-- 返回按钮 -->
+  <view class="back-btn" bindtap="onBackTap">返回</view>
+</view>

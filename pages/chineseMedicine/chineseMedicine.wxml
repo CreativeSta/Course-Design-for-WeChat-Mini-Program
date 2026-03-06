@@ -1,0 +1,31 @@
+﻿<view class="container">
+  <view class="section-title">中医药材科普</view>
+
+  <view class="category-tabs">
+    <scroll-view scroll-x="true" enable-flex class="tabs-scroll">
+      <view class="tab-item {{activeCategory === 'common' ? 'active' : ''}}" bindtap="switchCategory" data-category="common">常用中药材</view>
+      <view class="tab-item {{activeCategory === 'health' ? 'active' : ''}}" bindtap="switchCategory" data-category="health">保健养生</view>
+      <view class="tab-item {{activeCategory === 'seasonal' ? 'active' : ''}}" bindtap="switchCategory" data-category="seasonal">季节养生</view>
+      <view class="tab-item {{activeCategory === 'prescription' ? 'active' : ''}}" bindtap="switchCategory" data-category="prescription">经典方剂</view>
+    </scroll-view>
+  </view>
+
+  <view class="medicine-list">
+    <view wx:for="{{currentMedicines}}" wx:key="id" class="medicine-item" bindtap="viewMedicineDetail" data-id="{{item.id}}">
+      <image src="{{item.image}}" class="medicine-image" mode="aspectFill" binderror="onMedicineImageError" data-id="{{item.id}}"></image>
+      <view class="medicine-content">
+        <view class="medicine-name">
+          <text class="name-text">{{item.name}}</text>
+          <text class="latin-name">{{item.latinName}}</text>
+        </view>
+        <view class="medicine-brief">{{item.brief}}</view>
+        <view class="medicine-effects">功效：{{item.effects}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="back-button" bindtap="navigateBack">
+    <image src="/images/arrow-left.png" class="back-icon"></image>
+    <text>返回</text>
+  </view>
+</view>

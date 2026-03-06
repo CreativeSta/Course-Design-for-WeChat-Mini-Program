@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="section-title">我的购物车</view>
+  
+  <!-- 购物车为空时的提示 -->
+  <view class="empty-cart" wx:if="{{cart.length === 0}}">
+    <image src="/images/empty-cart.png" class="empty-icon"></image>
+    <view class="empty-text">购物车还是空的哦</view>
+    <view class="empty-subtext">快去添加心仪的商品吧</view>
+    <view class="btn-go-shopping" bindtap="goShopping">去购物</view>
+  </view>
+  
+  <!-- 购物车列表 -->
+  <view class="cart-list" wx:else>
+    <view wx:for="{{cart}}" wx:key="id" class="cart-item">
+      <image src="{{item.image}}" class="product-image" mode="aspectFit"></image>
+      <view class="product-info">
+        <view class="product-name">{{item.name}}</view>
+        <view class="product-price">¥{{item.price}}</view>
+        <view class="product-quantity">
+          <view class="quantity-btn minus" bindtap="decreaseQuantity" data-id="{{item.id}}">-</view>
+          <view class="quantity">{{item.quantity}}</view>
+          <view class="quantity-btn plus" bindtap="increaseQuantity" data-id="{{item.id}}">+</view>
+        </view>
+      </view>
+      <view class="delete-btn" bindtap="removeFromCart" data-id="{{item.id}}">删除</view>
+    </view>
+  </view>
+  
+  <!-- 底部结算栏 -->
+  <view class="cart-footer" wx:if="{{cart.length > 0}}">
+    <view class="total-price">
+      合计：¥{{totalPrice}}
+    </view>
+    <view class="btn-checkout" bindtap="checkout">去结算</view>
+  </view>
+  
+  <!-- 返回首页按钮 -->
+  <view class="back-home">
+    <image src="/images/home.png" class="home-icon" bindtap="navigateToHome"></image>
+  </view>
+</view>

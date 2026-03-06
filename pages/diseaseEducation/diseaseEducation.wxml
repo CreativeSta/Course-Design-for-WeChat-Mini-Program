@@ -1,0 +1,37 @@
+<!--diseaseEducation.wxml-->
+<view class="container">
+  <view class="section-title">常见基础病知识</view>
+  
+  <!-- 疾病列表 -->
+  <view class="disease-list">
+    <block wx:for="{{diseases}}" wx:key="id">
+      <view class="disease-card" bindtap="toggleDiseaseDetail" data-id="{{item.id}}">
+        <image src="{{item.icon}}" class="disease-icon" mode="aspectFit"></image>
+        <view class="disease-content">
+          <view class="disease-name">{{item.name}}</view>
+          <view class="disease-desc">{{item.desc}}</view>
+          <view class="toggle-icon">{{expandedId === item.id ? '↑ 收起详情' : '↓ 查看详情'}}</view>
+        </view>
+      </view>
+      
+      <!-- 详细信息，默认隐藏 -->
+      <view class="detail-panel" wx:if="{{expandedId === item.id}}">
+        <view class="detail-item">
+          <view class="detail-title">常见症状</view>
+          <view class="detail-content">{{item.symptoms}}</view>
+        </view>
+        <view class="detail-item">
+          <view class="detail-title">预防措施</view>
+          <view class="detail-content">{{item.prevention}}</view>
+        </view>
+        <view class="detail-item">
+          <view class="detail-title">健康小贴士</view>
+          <view class="detail-content">{{item.tips}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 返回按钮 -->
+  <view class="back-btn" bindtap="onBackTap">返回</view>
+</view>

@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="medicine-detail">
+    <view class="medicine-name">
+      <text class="chinese-name">{{medicine.name}}</text>
+      <text class="latin-name">{{medicine.latinName}}</text>
+    </view>
+    
+    <image src="{{medicine.image}}" class="medicine-image" mode="aspectFill" binderror="onDetailImageError"></image>
+    
+    <view class="medicine-info">
+      <view class="info-item">
+        <view class="info-label">药材简介</view>
+        <view class="info-content">{{medicine.brief}}</view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">功效与作用</view>
+        <view class="info-content">{{medicine.effects}}</view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">性味归经</view>
+        <view class="info-content">{{medicine.properties}}</view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">用法用量</view>
+        <view class="info-content">{{medicine.usage}}</view>
+      </view>
+      
+      <view class="info-item">
+        <view class="info-label">使用注意</view>
+        <view class="info-content">{{medicine.cautions}}</view>
+      </view>
+    </view>
+    
+    <view class="medicine-tips">
+      <view class="tips-title">温馨提示</view>
+      <text class="tips-text">中药材的使用应在中医师的指导下进行，请勿自行用药。</text>
+    </view>
+  </view>
+  
+  <!-- 返回按钮 -->
+  <view class="back-button" bindtap="navigateBack">
+    <image src="/images/arrow-left.png" class="back-icon"></image>
+    <text>返回</text>
+  </view>
+</view>

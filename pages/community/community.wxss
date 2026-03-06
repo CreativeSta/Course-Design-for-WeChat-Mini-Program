@@ -1,0 +1,186 @@
+page {
+  background: #f4f6fa;
+}
+
+.community-page {
+  padding: 24rpx;
+}
+
+.hero-card {
+  border-radius: 24rpx;
+  padding: 32rpx 28rpx;
+  background: linear-gradient(140deg, #1f7ae0 0%, #33b1ff 100%);
+  box-shadow: 0 12rpx 30rpx rgba(31, 122, 224, 0.22);
+}
+
+.hero-title {
+  color: #ffffff;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  margin-top: 10rpx;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+.section-title {
+  margin: 28rpx 0 14rpx;
+  font-size: 30rpx;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+}
+
+.activity-card {
+  background: #ffffff;
+  border-radius: 18rpx;
+  padding: 24rpx;
+  border: 2rpx solid transparent;
+  box-shadow: 0 5rpx 16rpx rgba(15, 23, 42, 0.06);
+}
+
+.activity-card.active {
+  border-color: #33b1ff;
+  box-shadow: 0 8rpx 20rpx rgba(51, 177, 255, 0.16);
+}
+
+.activity-name {
+  font-size: 32rpx;
+  color: #111827;
+  font-weight: 700;
+}
+
+.activity-meta {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #6b7280;
+}
+
+.activity-count {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  color: #0284c7;
+}
+
+.detail-card {
+  margin-top: 24rpx;
+  background: #ffffff;
+  border-radius: 22rpx;
+  padding: 24rpx;
+  box-shadow: 0 8rpx 22rpx rgba(15, 23, 42, 0.08);
+}
+
+.detail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-title {
+  font-size: 34rpx;
+  color: #111827;
+  font-weight: 700;
+}
+
+.detail-status {
+  font-size: 24rpx;
+  color: #0284c7;
+  background: #e0f2fe;
+  border-radius: 999rpx;
+  padding: 6rpx 16rpx;
+}
+
+.detail-desc {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12rpx;
+  padding-top: 12rpx;
+  border-top: 1rpx solid #eef2f7;
+}
+
+.detail-label {
+  font-size: 26rpx;
+  color: #6b7280;
+}
+
+.detail-value {
+  font-size: 26rpx;
+  color: #111827;
+  max-width: 65%;
+  text-align: right;
+}
+
+.member-title {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #111827;
+  font-weight: 700;
+}
+
+.member-list {
+  margin-top: 10rpx;
+}
+
+.member-item {
+  padding: 12rpx 0;
+  border-bottom: 1rpx solid #eef2f7;
+}
+
+.member-item:last-child {
+  border-bottom: none;
+}
+
+.member-name {
+  font-size: 27rpx;
+  color: #1f2937;
+}
+
+.member-meta {
+  margin-top: 4rpx;
+  font-size: 24rpx;
+  color: #6b7280;
+}
+
+.member-empty {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #9ca3af;
+}
+
+.action-row {
+  margin-top: 22rpx;
+}
+
+.join-btn,
+.quit-btn {
+  width: 100%;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  line-height: 84rpx;
+  height: 84rpx;
+}
+
+.join-btn {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.quit-btn {
+  background: #e5e7eb;
+  color: #374151;
+}

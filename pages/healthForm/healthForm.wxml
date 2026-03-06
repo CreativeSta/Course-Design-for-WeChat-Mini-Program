@@ -1,0 +1,73 @@
+<view class="health-page">
+  <view class="page-title">AI 身体指标分析</view>
+  <view class="page-subtitle">请填写真实数据，系统将给出个性化建议</view>
+
+  <view class="panel">
+    <view class="form-item">
+      <view class="label">性别</view>
+      <radio-group class="radio-row" bindchange="onGenderChange">
+        <label class="radio-option">
+          <radio value="male" checked="{{form.gender == 'male'}}" />
+          男
+        </label>
+        <label class="radio-option">
+          <radio value="female" checked="{{form.gender == 'female'}}" />
+          女
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="form-item">
+      <view class="label">年龄（岁）</view>
+      <input class="input" type="number" data-field="age" value="{{form.age}}" placeholder="例如：65" bindinput="onInputChange" bindblur="onInputBlur" />
+      <view class="error-text" wx:if="{{errors.age}}">{{errors.age}}</view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">身高（cm）</view>
+      <input class="input" type="digit" data-field="height" value="{{form.height}}" placeholder="例如：168" bindinput="onInputChange" bindblur="onInputBlur" />
+      <view class="error-text" wx:if="{{errors.height}}">{{errors.height}}</view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">体重（kg）</view>
+      <input class="input" type="digit" data-field="weight" value="{{form.weight}}" placeholder="例如：63.5" bindinput="onInputChange" bindblur="onInputBlur" />
+      <view class="error-text" wx:if="{{errors.weight}}">{{errors.weight}}</view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">血压（mmHg）</view>
+      <view class="bp-row">
+        <input class="input half" type="number" data-field="systolic" value="{{form.systolic}}" placeholder="收缩压" bindinput="onInputChange" bindblur="onInputBlur" />
+        <view class="split">/</view>
+        <input class="input half" type="number" data-field="diastolic" value="{{form.diastolic}}" placeholder="舒张压" bindinput="onInputChange" bindblur="onInputBlur" />
+      </view>
+      <view class="error-text" wx:if="{{errors.systolic}}">{{errors.systolic}}</view>
+      <view class="error-text" wx:if="{{errors.diastolic}}">{{errors.diastolic}}</view>
+      <view class="error-text" wx:if="{{errors.bloodPressure}}">{{errors.bloodPressure}}</view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">静息心率（次/分钟）</view>
+      <input class="input" type="number" data-field="heartRate" value="{{form.heartRate}}" placeholder="例如：72" bindinput="onInputChange" bindblur="onInputBlur" />
+      <view class="error-text" wx:if="{{errors.heartRate}}">{{errors.heartRate}}</view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">既往病史</view>
+      <checkbox-group class="disease-list" bindchange="onDiseaseChange">
+        <label wx:for="{{diseaseOptions}}" wx:key="value" class="disease-option">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+          {{item.label}}
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="action-buttons">
+      <button class="reset-btn" bindtap="resetForm" disabled="{{isSubmitting}}">重置</button>
+      <button class="submit-btn" loading="{{isSubmitting}}" disabled="{{isSubmitting || !isFormReady}}" bindtap="submitForm">
+      {{isSubmitting ? '分析中...' : '提交分析'}}
+      </button>
+    </view>
+  </view>
+</view>

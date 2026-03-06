@@ -1,0 +1,66 @@
+<view class="community-page">
+  <view class="hero-card">
+    <view class="hero-title">社群活动中心</view>
+    <view class="hero-subtitle">结伴锻炼，互相鼓励，长期坚持更轻松</view>
+  </view>
+
+  <view class="section-title">可参与活动</view>
+  <view class="activity-list">
+    <view
+      wx:for="{{activities}}"
+      wx:key="id"
+      class="activity-card {{selectedActivityId == item.id ? 'active' : ''}}"
+      bindtap="onActivityTap"
+      data-id="{{item.id}}"
+    >
+      <view class="activity-name">{{item.name}}</view>
+      <view class="activity-meta">{{item.time}}</view>
+      <view class="activity-meta">{{item.location}}</view>
+      <view class="activity-count">
+        已报名 {{item.participants.length}} / {{item.capacity}}
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{currentActivity}}" class="detail-card">
+    <view class="detail-head">
+      <view class="detail-title">{{currentActivity.name}}</view>
+      <view class="detail-status">
+        {{hasJoinedSelected ? '已加入' : '未加入'}}
+      </view>
+    </view>
+
+    <view class="detail-desc">{{currentActivity.description}}</view>
+
+    <view class="detail-row">
+      <view class="detail-label">活动时间</view>
+      <view class="detail-value">{{currentActivity.time}}</view>
+    </view>
+    <view class="detail-row">
+      <view class="detail-label">活动地点</view>
+      <view class="detail-value">{{currentActivity.location}}</view>
+    </view>
+
+    <view class="member-title">报名成员</view>
+    <view class="member-list" wx:if="{{currentActivity.participants.length > 0}}">
+      <view wx:for="{{currentActivity.participants}}" wx:key="id" class="member-item">
+        <view class="member-name">{{item.name}}</view>
+        <view class="member-meta">{{item.age}}岁 · {{item.skillLevel}}</view>
+      </view>
+    </view>
+    <view wx:else class="member-empty">当前还没有成员，快来成为第一个报名者。</view>
+
+    <view class="action-row">
+      <button
+        wx:if="{{!hasJoinedSelected}}"
+        class="join-btn"
+        bindtap="joinSelectedActivity"
+      >加入活动</button>
+      <button
+        wx:else
+        class="quit-btn"
+        bindtap="quitSelectedActivity"
+      >退出活动</button>
+    </view>
+  </view>
+</view>

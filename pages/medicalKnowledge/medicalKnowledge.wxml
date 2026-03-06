@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="section-title">医学知识科普</view>
+  
+  <!-- 知识分类 -->
+  <view class="category-tabs">
+    <scroll-view scroll-x="true" enable-flex class="tabs-scroll">
+      <view class="tab-item {{activeCategory === 'common' ? 'active' : ''}}" bindtap="switchCategory" data-category="common">
+        常见健康知识
+      </view>
+      <view class="tab-item {{activeCategory === 'senior' ? 'active' : ''}}" bindtap="switchCategory" data-category="senior">
+        老年健康
+      </view>
+      <view class="tab-item {{activeCategory === 'firstaid' ? 'active' : ''}}" bindtap="switchCategory" data-category="firstaid">
+        急救常识
+      </view>
+      <view class="tab-item {{activeCategory === 'nutrition' ? 'active' : ''}}" bindtap="switchCategory" data-category="nutrition">
+        营养健康
+      </view>
+    </scroll-view>
+  </view>
+  
+  <!-- 知识列表 -->
+  <view class="knowledge-list">
+    <view wx:for="{{currentKnowledge}}" wx:key="id" class="knowledge-item" bindtap="viewKnowledgeDetail" data-id="{{item.id}}">
+      <image src="{{item.image}}" class="knowledge-image" mode="aspectFit"></image>
+      <view class="knowledge-content">
+        <view class="knowledge-title">{{item.title}}</view>
+        <view class="knowledge-brief">{{item.brief}}</view>
+        <view class="knowledge-source">来源：{{item.source}}</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 返回按钮 -->
+  <view class="back-button" bindtap="navigateBack">
+    <image src="/images/arrow-left.png" class="back-icon"></image>
+    <text>返回</text>
+  </view>
+</view>

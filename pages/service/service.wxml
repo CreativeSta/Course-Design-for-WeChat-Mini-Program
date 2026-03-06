@@ -1,0 +1,12 @@
+﻿<view class="container">
+  <view class="section-title">更多服务</view>
+
+  <view class="card" wx:for="{{services}}" wx:key="id" bindtap="onServiceTap" data-id="{{item.id}}">
+    <view class="service-title">{{item.name}}</view>
+    <image src="{{item.image}}" class="img-fluid" mode="aspectFit" binderror="onServiceImageError" data-id="{{item.id}}"></image>
+  </view>
+
+  <view class="back-home">
+    <image src="/images/home.png" class="home-icon" bindtap="navigateToHome"></image>
+  </view>
+</view>

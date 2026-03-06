@@ -1,0 +1,41 @@
+<view class="sport-page">
+  <view class="hero">
+    <view class="hero-title">{{greeting}}</view>
+    <view class="hero-subtitle">适老化运动管理 · 每天小进步</view>
+  </view>
+
+  <view class="summary-grid">
+    <view class="summary-card">
+      <view class="summary-label">今日目标</view>
+      <view class="summary-value">{{dailyGoalMinutes}} 分钟</view>
+    </view>
+    <view class="summary-card">
+      <view class="summary-label">已完成</view>
+      <view class="summary-value">{{completedMinutes}} 分钟</view>
+    </view>
+    <view class="summary-card">
+      <view class="summary-label">本周次数</view>
+      <view class="summary-value">{{weeklySessions}} 次</view>
+    </view>
+    <view class="summary-card">
+      <view class="summary-label">心率状态</view>
+      <view class="summary-value">{{heartRateStatus}}</view>
+    </view>
+  </view>
+
+  <view class="action-card">
+    <view class="action-title">AI 身体指标分析</view>
+    <view class="action-desc">录入基础指标后，生成个性化健康建议与运动提醒。</view>
+    <button class="primary-btn" bindtap="startAIAnalysis">开始分析</button>
+  </view>
+
+  <view class="tips-card">
+    <view class="tips-title">今日建议</view>
+    <view class="tips-content">{{suggestion}}</view>
+  </view>
+
+  <view class="quick-row">
+    <button class="ghost-btn" bindtap="goCommunity">去社群活动</button>
+    <button class="ghost-btn" bindtap="goProduct">去健康商品</button>
+  </view>
+</view>

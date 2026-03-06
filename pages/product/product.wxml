@@ -1,0 +1,21 @@
+﻿<view class="container">
+  <view class="section-title">商品选购</view>
+
+  <view class="cart-button" bindtap="navigateToCart">
+    购物车
+    <text wx:if="{{cartCount > 0}}" class="cart-badge">{{cartCount}}</text>
+  </view>
+
+  <view class="product-grid">
+    <view class="product-item" wx:for="{{products}}" wx:key="id" bindtap="onProductTap" data-id="{{item.id}}">
+      <image src="{{item.image}}" class="product-image" mode="aspectFit" binderror="onProductImageError" data-id="{{item.id}}"></image>
+      <view class="product-name">{{item.name}}</view>
+      <view class="product-price">¥{{item.price}}</view>
+      <view class="add-to-cart" catchtap="addToCart" data-id="{{item.id}}">添加到购物车</view>
+    </view>
+  </view>
+
+  <view class="back-home">
+    <image src="/images/home.png" class="home-icon" bindtap="navigateToHome"></image>
+  </view>
+</view>

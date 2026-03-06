@@ -1,0 +1,67 @@
+<view class="result-page" wx:if="{{report}}">
+  <view class="header-card">
+    <view class="title">分析完成</view>
+    <view class="subtitle">{{report.createdAtLabel}}</view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">指标概览</view>
+    <view class="summary-row">
+      <view class="summary-item">
+        <view class="summary-label">BMI</view>
+        <view class="summary-value">{{report.summary.bmiValue}}</view>
+        <view class="summary-level">{{report.summary.bmiLevel}}</view>
+      </view>
+      <view class="summary-item">
+        <view class="summary-label">血压</view>
+        <view class="summary-value">{{report.summary.bloodPressure}}</view>
+        <view class="summary-level">{{report.summary.bloodPressureLevel}}</view>
+      </view>
+      <view class="summary-item">
+        <view class="summary-label">心率</view>
+        <view class="summary-value">{{report.summary.heartRate}}</view>
+        <view class="summary-level">{{report.summary.heartRateLevel}}</view>
+      </view>
+    </view>
+    <view class="disease-line">既往病史：{{report.summary.diseaseText}}</view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">建议清单</view>
+    <view class="suggestion-item" wx:for="{{report.suggestions}}" wx:key="*this">
+      <text class="index">{{index + 1}}.</text>
+      <text class="text">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="history-head" bindtap="toggleHistory">
+      <view class="card-title">历史记录（{{history.length}}）</view>
+      <view class="toggle">{{showHistory ? '收起' : '展开'}}</view>
+    </view>
+    <view wx:if="{{showHistory}}" class="history-list">
+      <view
+        wx:for="{{history}}"
+        wx:key="id"
+        class="history-item"
+        bindtap="viewHistoryReport"
+        data-id="{{item.id}}"
+      >
+        <view class="history-time">{{item.createdAtLabel}}</view>
+        <view class="history-data">
+          BMI {{item.summary.bmiValue}} · 血压 {{item.summary.bloodPressure}} · 心率 {{item.summary.heartRate}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-row">
+    <button class="ghost-btn" bindtap="goHome">返回首页</button>
+    <button class="primary-btn" bindtap="goNewAnalysis">再测一次</button>
+  </view>
+</view>
+
+<view wx:else class="empty-page">
+  <view class="empty-text">暂无分析结果</view>
+  <button class="primary-btn" bindtap="goNewAnalysis">去分析</button>
+</view>

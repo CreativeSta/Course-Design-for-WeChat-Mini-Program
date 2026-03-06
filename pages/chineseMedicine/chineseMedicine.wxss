@@ -1,0 +1,135 @@
+.container {
+  padding: 20rpx;
+  font-size: 28rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin: 30rpx 0;
+  text-align: center;
+}
+
+.category-tabs {
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  padding: 10rpx 0;
+  border-radius: 10rpx;
+}
+
+.tabs-scroll {
+  display: flex;
+  white-space: nowrap;
+  padding: 0 10rpx;
+}
+
+.tab-item {
+  display: inline-block;
+  padding: 15rpx 30rpx;
+  margin: 0 10rpx;
+  border-radius: 30rpx;
+  background-color: #f0f0f0;
+  color: #666;
+  transition: all 0.3s;
+  font-size: 28rpx;
+}
+
+.tab-item.active {
+  background-color: #c8a97e;
+  color: #fff;
+}
+
+.medicine-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.medicine-item {
+  background-color: #fff;
+  border-radius: 15rpx;
+  padding: 20rpx;
+  display: flex;
+  gap: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.medicine-item:active {
+  transform: scale(0.98);
+}
+
+.medicine-image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+
+.medicine-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.medicine-name {
+  margin-bottom: 10rpx;
+}
+
+.name-text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+
+.latin-name {
+  font-size: 24rpx;
+  color: #999;
+  font-style: italic;
+  display: block;
+  margin-top: 5rpx;
+}
+
+.medicine-brief {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.medicine-effects {
+  font-size: 24rpx;
+  color: #c8a97e;
+  line-height: 1.4;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50rpx;
+  margin: 40rpx auto;
+  padding: 20rpx 40rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  width: 200rpx;
+}
+
+.back-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.back-button text {
+  color: #333;
+  font-size: 28rpx;
+}

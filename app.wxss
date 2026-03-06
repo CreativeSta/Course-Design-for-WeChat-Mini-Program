@@ -1,0 +1,134 @@
+/* 全局样式 - 适老化设计优化 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.6;
+  /* 增大行高提高可读性 */
+}
+
+.container {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  margin: 30rpx 0;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 100rpx;
+  height: 2rpx;
+  background-color: #e0e0e0;
+}
+
+.section-title::before {
+  left: 50rpx;
+}
+
+.section-title::after {
+  right: 50rpx;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+
+/* 适配性调整，针对老年用户 */
+@media (max-width: 375px) {
+  page {
+    font-size: 18px;
+    /* 小屏幕上字体更大 */
+  }
+}
+
+/* 适老化专用样式 - 触摸目标放大 */
+button, a, .btn-primary, .list-item, .product-item, .activity-item, .order-type {
+  touch-action: manipulation;
+}
+
+/* 增大按钮触摸区域 */
+.btn-primary,
+.list-item,
+.product-item,
+.activity-item,
+.order-type {
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+
+.btn-primary:active,
+.list-item:active,
+.product-item:active,
+.activity-item:active,
+.order-type:active {
+  transform: scale(0.98);
+}
+
+/* 提高重点文字对比度 */
+.section-title,
+.btn-primary,
+.step-number {
+  color: #333333 !important;
+  text-shadow: 0 1rpx 0 rgba(0,0,0,0.1);
+  /* 添加轻微阴影提高可读性 */
+}
+
+/* 按钮样式 */
+.btn-primary {
+  background-color: #e60012;
+  color: #ffffff;
+  border-radius: 30rpx;
+  padding: 20rpx 40rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+/* 列表项样式 */
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+/* 图片样式 */
+.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 12rpx;
+}
+
+/* 数量提示角标 */
+.badge {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  background-color: #e60012;
+  color: #ffffff;
+  font-size: 24rpx;
+  padding: 2rpx 16rpx;
+  border-radius: 15rpx;
+  min-width: 30rpx;
+  text-align: center;
+}

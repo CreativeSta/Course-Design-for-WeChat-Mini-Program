@@ -1,0 +1,10 @@
+<!-- test.wxml -->
+<view class="container">
+  <view class="header">
+    <text class="title">测试页面</text>
+  </view>
+  <view class="content">
+    <text>这是一个测试页面，用于验证导航功能。</text>
+    <button class="back-btn" bindtap="goBack">返回</button>
+  </view>
+</view>

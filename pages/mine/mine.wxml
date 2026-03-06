@@ -1,0 +1,95 @@
+<view class="mine-page">
+  <view wx:if="{{!isLoggedIn}}" class="profile-card login-card" bindtap="onLoginTap">
+    <image src="/images/tabbar/mine_normal.png" class="profile-avatar"></image>
+    <view class="profile-main">
+      <view class="profile-title">点击登录账号</view>
+      <view class="profile-subtitle">登录后可查看订单、消息和订阅</view>
+    </view>
+    <view class="profile-arrow">></view>
+  </view>
+
+  <view wx:else class="profile-card">
+    <image src="{{displayUser.avatar}}" class="profile-avatar"></image>
+    <view class="profile-main">
+      <view class="profile-title">{{displayUser.name}}</view>
+      <view class="profile-subtitle">{{displayUser.phoneNumber}}</view>
+    </view>
+  </view>
+
+  <view class="section-card">
+    <view class="section-head">
+      <view class="section-title">我的订单</view>
+      <view class="section-hint">按状态查看</view>
+    </view>
+
+    <view class="order-grid">
+      <view class="order-item" bindtap="onOrderTypeTap" data-status="pending">
+        <view class="order-mark">待</view>
+        <view class="order-text">待支付</view>
+        <view class="order-badge" wx:if="{{orders[0].count > 0}}">{{orders[0].count}}</view>
+      </view>
+
+      <view class="order-item" bindtap="onOrderTypeTap" data-status="processing">
+        <view class="order-mark">进</view>
+        <view class="order-text">进行中</view>
+        <view class="order-badge" wx:if="{{orders[1].count > 0}}">{{orders[1].count}}</view>
+      </view>
+
+      <view class="order-item" bindtap="onOrderTypeTap" data-status="completed">
+        <view class="order-mark">成</view>
+        <view class="order-text">已完成</view>
+      </view>
+
+      <view class="order-item" bindtap="onOrderTypeTap" data-status="cancelled">
+        <view class="order-mark">取</view>
+        <view class="order-text">已取消</view>
+      </view>
+
+      <view class="order-item" bindtap="onOrderTypeTap" data-status="afterSale">
+        <view class="order-mark">售</view>
+        <view class="order-text">售后中</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-card">
+    <view class="menu-item" bindtap="onMessageTap">
+      <view class="menu-left">
+        <view class="menu-dot"></view>
+        <view class="menu-text">最新消息</view>
+      </view>
+      <view class="menu-right">
+        <view class="menu-badge" wx:if="{{messageCount > 0}}">{{messageCount}}</view>
+        <view class="menu-arrow">></view>
+      </view>
+    </view>
+
+    <view class="menu-item" bindtap="onSubscriptionTap">
+      <view class="menu-left">
+        <view class="menu-dot"></view>
+        <view class="menu-text">我的订阅</view>
+      </view>
+      <view class="menu-arrow">></view>
+    </view>
+
+    <view class="menu-item no-border" bindtap="onFormTap">
+      <view class="menu-left">
+        <view class="menu-dot"></view>
+        <view class="menu-text">我的表单</view>
+      </view>
+      <view class="menu-arrow">></view>
+    </view>
+  </view>
+
+  <view class="section-card">
+    <view class="menu-item no-border" bindtap="onPhoneTap">
+      <view class="menu-left">
+        <view class="menu-dot"></view>
+        <view class="menu-text">联系电话</view>
+      </view>
+      <view class="phone-number">{{displayUser.phoneNumber}}</view>
+    </view>
+  </view>
+
+  <view class="logout-btn" bindtap="onLogout">退出当前登录</view>
+</view>
