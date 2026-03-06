@@ -44,6 +44,57 @@
 
 ---
 
+## 功能截图
+
+> 截图目录：`docs/screenshots/`
+
+### 首页运动
+![首页运动](docs/screenshots/01-首页运动.png)
+
+### 社群活动
+![社群活动](docs/screenshots/02-社群活动.png)
+
+### 医疗服务
+![医疗服务](docs/screenshots/03-医疗服务.png)
+
+### 商品购买
+![商品购买](docs/screenshots/04-商品购买.png)
+
+### 购物车
+![购物车](docs/screenshots/05-购物车.png)
+
+### 个人中心
+![个人中心](docs/screenshots/06-个人中心.png)
+
+### 登录注册
+![登录注册](docs/screenshots/07-登录注册.png)
+
+### 健康分析
+![健康分析](docs/screenshots/08-健康分析.png)
+
+### 分析结果
+![分析结果](docs/screenshots/09-分析结果.png)
+
+### 就医指导
+![就医指导](docs/screenshots/10-就医指导.png)
+
+### 疾病教育
+![疾病教育](docs/screenshots/11-疾病教育.png)
+
+### 医学知识
+![医学知识](docs/screenshots/12-医学知识.png)
+
+### 中医药材
+![中医药材](docs/screenshots/13-中医药材.png)
+
+### 知识详情
+![知识详情](docs/screenshots/14-知识详情.png)
+
+### 药材详情
+![药材详情](docs/screenshots/15-药材详情.png)
+
+---
+
 ## 核心功能详解
 
 ### 1. 首页运动模块
